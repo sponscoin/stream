@@ -1,10 +1,51 @@
-# Reverse Engineered Twitch.tv UI  (Responsive CSS Grid Experiment)
+## Installation
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/acupoftee/pen/LYVoqYb](https://codepen.io/acupoftee/pen/LYVoqYb).
+Ensure you have a recent version of [node & npm](https://nodejs.org/en/download/) or [yarn](https://yarnpkg.com/en/docs/install) installed.
 
-Imagine a version of Twitch where you can stream AND upload gaming videos like let’s plays. This would help games get even more exposure through more creators! I decided to code a proof of concept for an upload feature on Twitch. This website is known for building solid communities. I think publishers and creators who record lets plays instead of live streams could benefit from a feature like this on Twitch!
-This was also a REALLY fun way to practice CSS grid.
+All of the following steps run on the command line within this directory. You can substitute `npm` for `yarn` depending on your preferences.
 
-If you're interested in the build process, check out the speed coding video on YouTube! https://www.youtube.com/watch?v=SJYmwlcptqM&feature=youtu.be
+Install all the necessary packages:
 
-Check out the creators featured in this project as well! 
+```
+npm install
+```
+
+## Build
+
+To build for distribution:
+
+```
+npm run build
+```
+
+All of the final output will be dropped into the [/dist/](./dist) folder.
+
+## Server
+
+Run a local server that will automatically compile your code & refresh when you save a change!
+
+```
+npm run serve
+```
+
+---
+
+## Folder Structure
+
+```
+/exported-item/
+|-- /build/ - Build scripts
+|  |-- gulpfile.js - The tasks for the main build process
+|  |-- util.js - Utilities used by the tasks
+|
+|-- /src/ - Your code
+|  |-- index.template.html - The wrapper around your compiled HTML that includes any external stylesheets and scripts
+|  |-- index.partial.(html|pug|haml|...) - The raw HTML input or preprocessor equivalent
+|  |-- style.(css|scss|less|...) - The raw CSS input, or preprocessor equivalent
+|  |-- script.(js|ts|coffee|...) - The raw JavaScript input, or preprocessor equivalent
+|
+|-- /dist/ - The compiled output after running `npm run build`
+|  |-- index.html
+|  |-- script.js
+|  |-- style.css
+```
